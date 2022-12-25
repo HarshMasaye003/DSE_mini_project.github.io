@@ -1,3 +1,9 @@
+@media (min-width: 600px) {
+    .lg\:hidden {
+        display: none;
+    }
+}
+
 #preview {
     min-width: calc(101vw - 40px);
 }

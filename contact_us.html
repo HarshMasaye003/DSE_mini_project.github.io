@@ -6,13 +6,120 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HACO</title>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css" />
+    <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src=//cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        section {
+            min-height: calc(100vh - 108px - 72px);
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .form-container {
+            height: calc(100vh - 108px - 72px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .form {
+            opacity: 70%;
+            background-color: transparent;
+            border: 2px solid teal;
+            border-radius: 8px;
+            width: 400px;
+            max-width: 100%;
+            max-height: 100%;
+            padding: 30px;
+            margin-top: 18px;
+            margin-bottom: 18px;
+        }
+
+        label {
+            color: #212519;
+        }
+
+        .form-heading {
+            color: #000;
+            padding: 5px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #name,
+        #email,
+        #number {
+            background-color: transparent;
+            color: #212529;
+            border: 2px solid teal;
+            border-radius: 6px;
+            width: 340px;
+            max-width: 100%;
+            padding: 3px;
+            margin-top: 4px;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0;
+        }
+
+        input,
+        textarea {
+            color: #fff;
+        }
+
+        textarea:focus,
+        input:focus {
+            color: #fff;
+            outline: none;
+        }
+
+        #message {
+            background-color: transparent;
+            border: 2px solid teal;
+            border-radius: 6px;
+            width: 340px;
+            max-width: 100%;
+            height: 100px;
+            padding: 3px;
+            margin-top: 4px;
+            resize: none;
+        }
+
+        #submit {
+            background-color: transparent;
+            color: #212529;
+            min-width: 100%;
+            border: 2px solid teal;
+            border-radius: 8px;
+            padding: 7px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #submit:hover {
+            transform: scale(1.025);
+            transition: 10.5ms;
+        }
+    </style>
 </head>
 
 <body>
-
     <div class="isolate bg-white">
         <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
             <svg class="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
@@ -28,75 +135,120 @@
                 </defs>
             </svg>
         </div>
-        <div class="px-6 pt-6 lg:px-8">
-            <div>
-                <nav class="flex h-9 items-center justify-between" aria-label="Global">
-                    <div class="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-                        <a href="#" class="-m-1.5 p-1.5">
-                            <span class="sr-only">HACO</span>
-                            <img class="h-20 w-100" src="logo.png" alt="">
-                        </a>
-                    </div>
-                    <div class="flex lg:hidden">
-                        <button type="button"
-                            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-                            <span class="sr-only">Open main menu</span>
-                            <!-- Hero icon name: outline/bars-3 -->
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12">
-                        <a href="index.html" class="font-semibold text-gray-900 hover:text-gray-900">Home</a>
 
-                        <a href="components.html" class="font-semibold text-gray-900 hover:text-gray-900">Components</a>
 
-                        <a href="about_us.html" class="font-semibold text-gray-900 hover:text-gray-900">About Us</a>
+        <nav class="background-color:transparent border-gray-200 px-5 md:px-5 py-3">
+            <div class="flex py-3 flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                <a href="index.html" class="flex items-center">
+                    <img src="logo.png" class="mr-3 h-7 sm:h-10" alt="Logo" />
+                </a>
+                <div class="flex items-center md:order-2">
+                    <button data-collapse-toggle="mega-menu" type="button"
+                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="mega-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="mega-menu"
+                    class="hidden justify-between items-center w-full text-sm md:flex md:w-auto md:order-1 text-decoration-none">
+                    <ul class="flex flex-col mt-2 font-medium md:flex-row md:space-x-8 md:mt-0">
+                        <li>
+                            <a href="index.html"
+                                class="block py-2 pr-4 pl-3 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                                aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="components.html"
+                                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                                aria-current="page">Components</a>
+                        <li>
+                            <a href="about_us.html"
+                                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">About
+                                Us</a>
+                        </li>
+                        <li>
+                            <a href="contact_us.html"
+                                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Contact
+                                Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-                        <a href="contact_us.html" class="font-semibold text-gray-900 hover:text-gray-900">Contact Us</a>
-                    </div>
-                    <div class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
-                        <a href="#"
-                            class="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20">Log
-                            in</a>
-                    </div>
-                </nav>
+        <Section>
+            <div class="form-container">
+                <form class="form" id="contactForm">
+                    <p class="form-heading">Contact Me</p>
+                    <label><i class="fa fa-light fa-id-badge"></i> Name</label><br>
+                    <input type="text" id="name" placeholder="Enter your Name..."><br>
 
-                <!-- Mobile menu, show/hide based on menu open state. -->
-                <div role="dialog" aria-modal="true">
-                    <div focus="true" class="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
-                        <div class="flex h-9 items-center justify-between">
-                            <div class="flex">
-                                <a href="#" class="-m-1.5 p-1.5">
-                                    <span class="sr-only">Your Company</span>
-                                    <img class="h-8" src="logo.png" alt="">
-                                </a>
-                            </div>
-                            <div class="flex">
-                                <button type="button"
-                                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-                                    <span class="sr-only">Close menu</span>
-                                    <!-- Hero icon name: outline/x-mark -->
-                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
+                    <label style="margin-top: 10px;"><i class="fa fa-light fa-envelope"></i> Email</label><br>
+                    <input type="email" id="email" placeholder="Enter your Email..."><br>
 
+                    <label style="margin-top: 10px;"><i class="fa fa-light fa-phone"></i> Phone No</label><br>
+                    <input type="number" id="number" placeholder="Enter your Number..."><br>
+
+                    <label style="margin-top: 10px;"><i class="fa fa-light fa-comment"></i> Please leave your
+                        feedback</label><br>
+                    <textarea type="text" id="message" placeholder="leave your thoughts here..."></textarea><br>
+
+                    <button type="submit" id="submit">Submit <i class="fa fa-light fa-paper-plane"></i></button>
+                </form>
+
+            </div>
+        </Section>
+
+
+    </div>
+
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-none text-gray-700">
+        <div class="container text-center">
+            <small>Copyright &copy;HarshMasaye06</small>
+        </div>
+    </footer>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-    crossorigin="anonymous"></script>
 
-<script src="https://cdn.tailwindcss.com"></script>
 
-<script src=//cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css>
+
+<script>
+    document.querySelector(".side-panel-toggle").addEventListener("click", () => {
+        document.querySelector(".wrapper").classList.toggle("side-panel-open");
+    });
+</script>
+<script>
+    window.onload = () => {
+        const tab_switchers = document.querySelectorAll('[data-switcher]');
+
+        for (let i = 0; i < tab_switchers.length; i++) {
+            const tab_switcher = tab_switchers[i];
+            const page_id = tab_switcher.dataset.tab;
+
+            tab_switcher.addEventListener('click', () => {
+                document.querySelector('.tabs .tab.is-active').classList.remove('is-active');
+                tab_switcher.parentNode.classList.add('is-active');
+
+                SwitchPage(page_id);
+            });
+        }
+    }
+
+    function SwitchPage(page_id) {
+        console.log(page_id);
+
+        const current_page = document.querySelector('.pages .page.is-active');
+        current_page.classList.remove('is-active');
+
+        const next_page = document.querySelector(`.pages .page[data-page="${page_id}"]`);
+        next_page.classList.add('is-active');
+    }
 </script>
 
 </html>

@@ -6,181 +6,182 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HACO</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css" />
     <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src=//cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
     <style>
-        section {
-            min-height: calc(100vh - 108px - 72px);
+        :root {
+            --primary-color: #302AE6;
+            --secondary-color: #536390;
+            --font-color: #424242;
+            --bg-color: #fff;
+            --heading-color: #292922;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #9A97F3;
+            --secondary-color: #818cab;
+            --font-color: #e1e1ff;
+            --bg-color: #161625;
+            --heading-color: #818cab;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--font-color);
         }
     </style>
 </head>
 
-<body>
-    <!-- Navabr -->
-    <div class="isolate bg-white">
-        <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
-            <svg class="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
-                viewBox="0 0 1155 678" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)" fill-opacity=".3"
-                    d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z" />
-                <defs>
-                    <linearGradient id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533" x1="1155.49" x2="-78.208" y1=".177"
-                        y2="474.645" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#9089FC"></stop>
-                        <stop offset="1" stop-color="#FF80B5"></stop>
-                    </linearGradient>
-                </defs>
-            </svg>
+<body class="light">
+
+    <nav class="border-gray-200 px-5 md:px-5 py-3 flex-row">
+        <div class="flex py-3 flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <a href="index.html" class="flex items-center">
+                <img src="images/logo.png" class="mr-8 h-20 sm:h-20" alt="Logo" />
+            </a>
+            <div class="flex items-center md:order-2">
+                <button data-collapse-toggle="mega-menu" type="button"
+                    class="inline-flex items-center p-2 ml-1 text-sm text-black-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="mega-menu" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mega-menu"
+                class="hidden justify-between items-center w-full text-sm md:flex md:w-auto md:order-1 text-decoration-none">
+                <ul class="flex flex-col mt-2 font-medium md:flex-row md:space-x-8 md:mt-0">
+                    <li>
+                        <a href="index.html"
+                            class="block py-2 pr-4 pl-3 text-blue-600 font-bold border-b border-black-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-indigo-500 font-bold md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="components.html"
+                            class="block py-2 pr-4 pl-3 text-black-700 font-bold border-b border-black-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                            aria-current="page">Components</a>
+                    <li>
+                        <a href="about_us.html"
+                            class="block py-2 pr-4 pl-3 text-black-700 font-bold border-b border-black-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">About
+                            Us</a>
+                    </li>
+                    <li>
+                        <a href="contact_us.html"
+                            class="block py-2 pr-4 pl-3 text-black-700 font-bold border-b border-black-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Contact
+                            Us</a>
+                    </li>
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </ul>
+            </div>
         </div>
+    </nav>
 
-
-        <nav class="background-color:transparent border-gray-200 px-5 md:px-5 py-3">
-            <div class="flex py-3 flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                <a href="index.html" class="flex items-center">
-                    <img src="images/logo.png" class="mr-3 h-7 sm:h-10" alt="Logo" />
-                </a>
-                <div class="flex items-center md:order-2">
-                    <button data-collapse-toggle="mega-menu" type="button"
-                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                        aria-controls="mega-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div id="mega-menu"
-                    class="hidden justify-between items-center w-full text-sm md:flex md:w-auto md:order-1 text-decoration-none">
-                    <ul class="flex flex-col mt-2 font-medium md:flex-row md:space-x-8 md:mt-0">
-                        <li>
-                            <a href="index.html"
-                                class="block py-2 pr-4 pl-3 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
-                                aria-current="page">Home</a>
-                        </li>
-                        <li>
-                            <a href="components.html"
-                                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
-                                aria-current="page">Components</a>
-                        <li>
-                            <a href="about_us.html"
-                                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">About
-                                Us</a>
-                        </li>
-                        <li>
-                            <a href="contact_us.html"
-                                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Contact
-                                Us</a>
-                        </li>
-                    </ul>
-                </div>
+    <section class="text-gray-400 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-20">
+                <h1 class="text-2xl font-medium title-font mb-4 text-gray-700">OUR TEAM</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
             </div>
-        </nav>
-
-
-        <section class="text-gray-400 body-font">
-            <div class="container px-5 py-24 mx-auto">
-                <div class="flex flex-col text-center w-full mb-20">
-                    <h1 class="text-2xl font-medium title-font mb-4 text-gray-700">OUR TEAM</h1>
-                    <p class="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
+            <div class="flex flex-wrap -m-4">
+                <div class="p-4 lg:w-1/4 md:w-1/2">
+                    <div class="h-full flex flex-col items-center text-center">
+                        <img alt="team" class="flex-shrink-0 rounded-lg w-30 h-50 object-cover object-center mb-4"
+                            src="https://dummyimage.com/200x200">
+                        <div class="w-full">
+                            <h2 class="title-font font-medium text-lg text-gray-600">Harsh Masaye</h2>
+                            <h3 class="text-gray-500 mb-3">VU2S2223003</h3>
+                            <p class="mb-4"></p>
+                            <span class="inline-flex">
+                                <a class="text-gray-700">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex flex-wrap -m-4">
-                    <div class="p-4 lg:w-1/4 md:w-1/2">
-                        <div class="h-full flex flex-col items-center text-center">
-                            <img alt="team" class="flex-shrink-0 rounded-lg w-30 h-50 object-cover object-center mb-4"
-                                src="https://dummyimage.com/200x200">
-                            <div class="w-full">
-                                <h2 class="title-font font-medium text-lg text-gray-600">Harsh Masaye</h2>
-                                <h3 class="text-gray-500 mb-3">VU2S2223003</h3>
-                                <p class="mb-4"></p>
-                                <span class="inline-flex">
-                                    <a class="text-gray-700">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
-                                            viewBox="0 0 24 24">
-                                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
-                                            </path>
-                                        </svg>
-                                    </a>
-                                </span>
-                            </div>
+                <div class="p-4 lg:w-1/4 md:w-1/2">
+                    <div class="h-full flex flex-col items-center text-center">
+                        <img alt="team" class="flex-shrink-0 rounded-lg w-30 h-50 object-cover object-center mb-4"
+                            src="https://dummyimage.com/201x201">
+                        <div class="w-full">
+                            <h2 class="title-font font-medium text-lg text-gray-600">Ayan Shah</h2>
+                            <h3 class="text-gray-500 mb-3">VU2S2223007</h3>
+                            <p class="mb-4"></p>
+                            <span class="inline-flex">
+                                <a class="text-gray-700">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </span>
                         </div>
                     </div>
-                    <div class="p-4 lg:w-1/4 md:w-1/2">
-                        <div class="h-full flex flex-col items-center text-center">
-                            <img alt="team" class="flex-shrink-0 rounded-lg w-30 h-50 object-cover object-center mb-4"
-                                src="https://dummyimage.com/201x201">
-                            <div class="w-full">
-                                <h2 class="title-font font-medium text-lg text-gray-600">Ayan Shah</h2>
-                                <h3 class="text-gray-500 mb-3">VU2S2223007</h3>
-                                <p class="mb-4"></p>
-                                <span class="inline-flex">
-                                    <a class="text-gray-700">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
-                                            viewBox="0 0 24 24">
-                                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
-                                            </path>
-                                        </svg>
-                                    </a>
-                                </span>
-                            </div>
+                </div>
+                <div class="p-4 lg:w-1/4 md:w-1/2">
+                    <div class="h-full flex flex-col items-center text-center">
+                        <img alt="team" class="flex-shrink-0 rounded-lg w-30 h-50 object-cover object-center mb-4"
+                            src="https://dummyimage.com/202x202">
+                        <div class="w-full">
+                            <h2 class="title-font font-medium text-lg text-gray-600">Chintamani Joshi</h2>
+                            <h3 class="text-gray-500 mb-3">VU2S2223013</h3>
+                            <p class="mb-4"></p>
+                            <span class="inline-flex">
+                                <a class="text-gray-700">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </span>
                         </div>
                     </div>
-                    <div class="p-4 lg:w-1/4 md:w-1/2">
-                        <div class="h-full flex flex-col items-center text-center">
-                            <img alt="team" class="flex-shrink-0 rounded-lg w-30 h-50 object-cover object-center mb-4"
-                                src="https://dummyimage.com/202x202">
-                            <div class="w-full">
-                                <h2 class="title-font font-medium text-lg text-gray-600">Chintamani Joshi</h2>
-                                <h3 class="text-gray-500 mb-3">VU2S2223013</h3>
-                                <p class="mb-4"></p>
-                                <span class="inline-flex">
-                                    <a class="text-gray-700">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
-                                            viewBox="0 0 24 24">
-                                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
-                                            </path>
-                                        </svg>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 lg:w-1/4 md:w-1/2">
-                        <div class="h-full flex flex-col items-center text-center">
-                            <img alt="team" class="flex-shrink-0 rounded-lg w-30 h-50 object-cover object-center mb-4"
-                                src="https://dummyimage.com/203x203">
-                            <div class="w-full">
-                                <h2 class="title-font font-medium text-lg text-gray-600">Omkar Lomte</h2>
-                                <h3 class="text-gray-500 mb-3">VU2S2223010</h3>
-                                <p class="mb-4"></p>
-                                <span class="inline-flex">
-                                    <a class="text-gray-700">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
-                                            viewBox="0 0 24 24">
-                                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
-                                            </path>
-                                        </svg>
-                                    </a>
-                                </span>
-                            </div>
+                </div>
+                <div class="p-4 lg:w-1/4 md:w-1/2">
+                    <div class="h-full flex flex-col items-center text-center">
+                        <img alt="team" class="flex-shrink-0 rounded-lg w-30 h-50 object-cover object-center mb-4"
+                            src="https://dummyimage.com/203x203">
+                        <div class="w-full">
+                            <h2 class="title-font font-medium text-lg text-gray-600">Omkar Lomte</h2>
+                            <h3 class="text-gray-500 mb-3">VU2S2223010</h3>
+                            <p class="mb-4"></p>
+                            <span class="inline-flex">
+                                <a class="text-gray-700">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
 
@@ -191,16 +192,33 @@
             <small>Copyright &copy;HACO</small>
         </div>
     </footer>
-
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-    crossorigin="anonymous"></script>
+<script type="text/javascript" src="script.js"></script>
+<script>
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
 
-<script src="https://cdn.tailwindcss.com"></script>
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
 
-<script src=//cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css>
+        if (currentTheme === 'dark') {
+            toggleSwitch.checked = true;
+        }
+    }
+
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+        else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
 </script>
 
 </html>

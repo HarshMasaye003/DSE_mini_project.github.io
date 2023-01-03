@@ -24,6 +24,11 @@
     top: 0;
     transition: .4s;
 }
+form{
+    padding: 40px;
+    border: 2px solid var(--font-color);
+    border-radius: 12px;
+}
 
 .slider:before {
     background-color: #fff;

@@ -111,8 +111,6 @@
             color: yellow;
         }
 
-        */ {}
-
         @media (min-width: 600px) {
             .lg\:hidden {
                 display: none;

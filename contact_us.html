@@ -105,40 +105,40 @@
         <div class="form-container">
 
             <form>
-                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                <div class="grid gap-6 mb-6 md:grid-cols-2" id="feedbackForm">
                     <div>
                         <label for="first_name" class="block mb-2 text-sm font-medium  ">Name</label>
-                        <input type="text" id="first_name"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Name" required>
+                        <input name="first_name" type="text" id="first_name"
+                            class=" text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5" placeholder="Name"
+                            required>
                     </div>
                     <div>
-                        <label for="last_name" class="block mb-2 text-sm font-medium  ">College ID</label>
-                        <input type="text" id="last_name"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="ID" required>
+                        <label for="cid" class="block mb-2 text-sm font-medium  ">College ID</label>
+                        <input name="cid" type="text" id="cid"
+                            class="text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5" placeholder="ID"
+                            required>
                     </div>
                     <div>
-                        <label for="company" class="block mb-2 text-sm font-medium  ">College</label>
-                        <input type="text" id="company"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        <label for="c_name" class="block mb-2 text-sm font-medium  ">College</label>
+                        <input name="c_name" type="text" id="c_name"
+                            class="text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5"
                             placeholder="College Name" required>
                     </div>
                 </div>
                 <div class="mb-6">
                     <label for="email" class="block mb-2 text-sm font-medium  ">Email
                         address</label>
-                    <input type="email" id="email"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    <input name="email" type="email" id="email"
+                        class="text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5"
                         placeholder="john.doe@company.com" required>
                 </div>
                 <div class="mb-6">
                     <label for="large-input" class="block mb-2 text-sm font-medium  ">Feedback</label>
-                    <input type="text" id="large-input"
-                        class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <input name="message" type="text" id="message"
+                        class="text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 p-4">
                 </div>
 
-                <div class="flex items-start mb-6">
+                <!-- <div class="flex items-start mb-6">
                     <div class="flex items-center h-5">
                         <input id="remember" type="checkbox" value=""
                             class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
@@ -146,7 +146,7 @@
                     <label for="remember" class="ml-2 text-sm font-medium ">I agree with
                         the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and
                             conditions</a>.</label>
-                </div>
+                </div> -->
                 <button type="submit"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </form>
@@ -163,33 +163,50 @@
             <small>Copyright &copy;HACO</small>
         </div>
     </footer>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.15.0/firebase-app.js"
+        integrity="sha512-KakHaWvNgg3Mo/LptevcdwXzAmSFCFHrsvRUIRbUb++of57rXmIPQiAmpEeqaEdvhVk0ljxT2FpQk+wvP+j5LQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script> -->
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="database.js"></script>
+    <script>
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    </script>
 </body>
 
-<script type="text/javascript" src="script.js"></script>
-<script>
-    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-    const currentTheme = localStorage.getItem('theme');
 
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-
-        if (currentTheme === 'dark') {
-            toggleSwitch.checked = true;
-        }
-    }
-
-    function switchTheme(e) {
-        if (e.target.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        }
-        else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-        }
-    }
-
-    toggleSwitch.addEventListener('change', switchTheme, false);
-</script>
 
 </html>
